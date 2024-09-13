@@ -18,10 +18,6 @@ using namespace std;
 
 #define encrypt_template_DLPro "MXHCZ-BYEAR2-UQ9PQ6-TRHX5P-ZUJ81G-WNW0M4-70RBM"
 #define encrypt_template_DSLRRemotePro4Windows "000HXK-THHEJE-BWQAMM-M82HF9-80Z7VX-6RKQN3-K7ZPJN"
-#define encrypt_template_Flipbook "BREEZE00002M-062CXR-ZB6CAJ-YMFTW5-V4DR1C-5EM3PQ-1AEBPX-NZAJET"
-#define encrypt_template_WebcamPhotobooth "Photobooth22C1B989-64E0-42a8-ADC3-C045E1F2BCA8Webcam"
-#define encrypt_template_Hotfolder "PrintingD17515BC-5892-4333-B1D4-6AED5EF23B9CHotfolder"
-#define encrypt_template_BreezeKiosk "{4A87DDD5-7A34-4dfd-9CDF-63363C5B3B29}{EE2C1826-4423-4755-9471-9862A4BDEEEF}"
 #define encrypt_template_BBPro "000KBK-4QE0AG-HGHA9T-TCNJEG-C76Y9R-KRMNAP-20Z2AR"
 
 CStringA genkeyDLPro(CStringA name)
@@ -60,66 +56,6 @@ CStringA genkeyDSLRRemotePro4Windows(CStringA name)
 		6,	// level
 		name,
 		encrypt_template_DSLRRemotePro4Windows,
-		0,	// hardwareID
-		0,	// otherinfo1
-		0,	// otherinfo2
-		0,	// otherinfo3
-		0,	// otherinfo4
-		0	// otherinfo5
-		);
-}
-
-CStringA genkeyBreezeKiosk(CStringA name)
-{
-	return CreateCodeShort3A(
-		6,	// level
-		name,
-		encrypt_template_BreezeKiosk,
-		0,	// hardwareID
-		0,	// otherinfo1
-		0,	// otherinfo2
-		0,	// otherinfo3
-		0,	// otherinfo4
-		0	// otherinfo5
-		);
-}
-
-CStringA genkeyWebcam(CStringA name)
-{
-	return CreateCodeShort3A(
-		6,	// level
-		name,
-		encrypt_template_WebcamPhotobooth,
-		0,	// hardwareID
-		0,	// otherinfo1
-		0,	// otherinfo2
-		0,	// otherinfo3
-		0,	// otherinfo4
-		0	// otherinfo5
-		);
-}
-
-CStringA genkeyFlipbook(CStringA name)
-{
-	return CreateCodeShort3A(
-		9,	// level
-		name,
-		encrypt_template_Flipbook,
-		0,	// hardwareID
-		0,	// otherinfo1
-		0,	// otherinfo2
-		0,	// otherinfo3
-		0,	// otherinfo4
-		0	// otherinfo5
-		);
-}
-
-CStringA genkeyHotfolder(CStringA name)
-{
-	return CreateCodeShort3A(
-		6,	// level
-		name,
-		encrypt_template_Hotfolder,
 		0,	// hardwareID
 		0,	// otherinfo1
 		0,	// otherinfo2
@@ -186,18 +122,14 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 			case 1: code = genkeyDSLRRemotePro4Windows(name); break;
 			case 2: code = genkeyBreezeBrowserPro(name); break;
 			case 3: code = genkeyDLPro(name); break;
-			case 4: code = genkeyFlipbook(name); break;
-			case 5: code = genkeyHotfolder(name); break;
-			case 7: code = genkeyWebcam(name); break;
-			case 9: code = genkeyBreezeKiosk(name); break;
 			}
 			if (code.GetLength() < 6)
 			{
-				printf("Please contact sales@breezesys.com, err=3\n");
+				printf("Please contact sales@bsysphoto.com, err=3\n");
 				return 0;
 			}
 
-			printf("%s\n", code);
+			printf("%s\n", (const char *)code);
 		}
 	}
 	else
