@@ -1,0 +1,15 @@
+# ignore build artifacts
+bin
+obj
+x64
+Debug
+Release
+
+# visual studio files
+.vs
+ipch
+*.ncb
+*.suo
+*.vcxproj.filters
+*.vcxproj.user
+*.sdf
